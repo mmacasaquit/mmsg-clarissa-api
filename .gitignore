@@ -9,6 +9,9 @@
 *.user
 *.userosscache
 *.sln.docstates
+.vs/MMSG_CaseStudy/v17
+MMSG_CaseStudy/bin/Debug/net6.0
+MMSG_CaseStudy/obj
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
