@@ -12,6 +12,9 @@
 .vs/MMSG_CaseStudy/v17
 MMSG_CaseStudy/bin/Debug/net6.0
 MMSG_CaseStudy/obj
+MMSG_CaseStudy/Features/Delete.feature.cs
+MMSG_CaseStudy/Features/Post.feature.cs
+MMSG_CaseStudy/Features/Get.feature.cs
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
