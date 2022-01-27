@@ -1,6 +1,5 @@
 ﻿Feature: Post
-
-A short summary of the feature
+	Test POST operations for users and resources endpoints
 
 Scenario: Create a user
 	Given I set a POST request for "users"
