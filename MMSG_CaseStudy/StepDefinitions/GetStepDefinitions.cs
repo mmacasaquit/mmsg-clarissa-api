@@ -27,14 +27,6 @@ namespace MMSG_CaseStudy.StepDefinitions
             _settings.Response = _settings.RestClient.Execute(_settings.Request);
         }
 
-        [Then("I should see the data {string} value as {string}")]
-        public void ThenIShouldSeeTheDataValueAs(string key, string value)
-        {
-            Console.WriteLine(_settings.Response.Content.ToString());
-            JObject obj = JObject.Parse(_settings.Response.Content);
-            Assert.That(obj["data"][key].ToString(), Is.EqualTo(value));
-        }
-
     }
 
 }
