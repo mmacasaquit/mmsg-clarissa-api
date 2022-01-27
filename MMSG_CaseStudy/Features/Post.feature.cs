@@ -35,7 +35,7 @@ namespace MMSG_CaseStudy.Features
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Post", "A short summary of the feature", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Post", "\tTest POST operations for users and resources endpoints", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -80,7 +80,7 @@ namespace MMSG_CaseStudy.Features
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a user", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 5
+#line 4
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -100,23 +100,32 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 6
- testRunner.Given("I set a POST request for \"users\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 5
+ testRunner.Given("A \"POST\" for endpoint \"users\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                             "name",
                             "job"});
-                table1.AddRow(new string[] {
+                table2.AddRow(new string[] {
                             "Clarissa",
                             "QA"});
-#line 7
- testRunner.When("I send a POST request for create user", ((string)(null)), table1, "When ");
+#line 6
+ testRunner.When("I send a POST request for create user", ((string)(null)), table2, "When ");
 #line hidden
+#line 9
+ testRunner.Then("Response code should be 201", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                            "key",
+                            "value"});
+                table3.AddRow(new string[] {
+                            "name",
+                            "Clarissa"});
+                table3.AddRow(new string[] {
+                            "job",
+                            "QA"});
 #line 10
- testRunner.Then("POST response code should be 201", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 11
- testRunner.And("Create user response body should contain \"Clarissa\" as name and \"QA\" as job", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Response body should contain correct values", ((string)(null)), table3, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -129,7 +138,7 @@ this.ScenarioInitialize(scenarioInfo);
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Successful register", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 13
+#line 15
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -149,23 +158,29 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 14
- testRunner.Given("I set a POST request for \"register\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 16
+ testRunner.Given("A \"POST\" for endpoint \"register\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                             "email",
                             "password"});
-                table2.AddRow(new string[] {
+                table4.AddRow(new string[] {
                             "eve.holt@reqres.in",
                             "pistol"});
-#line 15
- testRunner.When("I send a POST request with credentials", ((string)(null)), table2, "When ");
+#line 17
+ testRunner.When("I send a POST request with credentials", ((string)(null)), table4, "When ");
 #line hidden
-#line 18
- testRunner.Then("POST response code should be 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 20
+ testRunner.Then("Response code should be 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 19
- testRunner.And("POST reponse body contains auth token \"QpwL5tke4Pnpja7X4\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+                TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                            "key",
+                            "value"});
+                table5.AddRow(new string[] {
+                            "token",
+                            "QpwL5tke4Pnpja7X4"});
+#line 21
+ testRunner.And("Response body should contain correct values", ((string)(null)), table5, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -178,7 +193,7 @@ this.ScenarioInitialize(scenarioInfo);
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Unsuccessful register", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 21
+#line 25
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -198,23 +213,29 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 22
- testRunner.Given("I set a POST request for \"register\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 26
+ testRunner.Given("A \"POST\" for endpoint \"register\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                             "email",
                             "password"});
-                table3.AddRow(new string[] {
+                table6.AddRow(new string[] {
                             "eve.holt@reqres.in",
                             ""});
-#line 23
- testRunner.When("I send a POST request with credentials", ((string)(null)), table3, "When ");
-#line hidden
-#line 26
- testRunner.Then("POST response code should be 400", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
 #line 27
- testRunner.And("POST response body contains error with \"Missing password\" message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I send a POST request with credentials", ((string)(null)), table6, "When ");
+#line hidden
+#line 30
+ testRunner.Then("Response code should be 400", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+                TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                            "key",
+                            "value"});
+                table7.AddRow(new string[] {
+                            "error",
+                            "Missing password"});
+#line 31
+ testRunner.And("Response body should contain correct values", ((string)(null)), table7, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -227,7 +248,7 @@ this.ScenarioInitialize(scenarioInfo);
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Successful login", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 29
+#line 35
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -247,23 +268,29 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 30
- testRunner.Given("I set a POST request for \"login\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 36
+ testRunner.Given("A \"POST\" for endpoint \"login\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                             "email",
                             "password"});
-                table4.AddRow(new string[] {
+                table8.AddRow(new string[] {
                             "eve.holt@reqres.in",
                             "pistol"});
-#line 31
- testRunner.When("I send a POST request with credentials", ((string)(null)), table4, "When ");
+#line 37
+ testRunner.When("I send a POST request with credentials", ((string)(null)), table8, "When ");
 #line hidden
-#line 34
- testRunner.Then("POST response code should be 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 40
+ testRunner.Then("Response code should be 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 35
- testRunner.And("POST reponse body contains auth token \"QpwL5tke4Pnpja7X4\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+                TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+                            "key",
+                            "value"});
+                table9.AddRow(new string[] {
+                            "token",
+                            "QpwL5tke4Pnpja7X4"});
+#line 41
+ testRunner.And("Response body should contain correct values", ((string)(null)), table9, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
