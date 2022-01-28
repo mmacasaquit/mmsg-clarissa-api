@@ -9,3 +9,6 @@ RestSharp v106.11.7
 2. Base URL is stored under Hooks > Init file
 3. Build project
 4. Run tests via Visual Studio's test explorer
+
+# Notes / Improvements
+- Store URL in an environment variable/json file instead of being hard coded to allow easier execution
