@@ -30,6 +30,10 @@ namespace MMSG_CaseStudy.StepDefinitions
             {
                 _settings.Request = new RestRequest(url, Method.DELETE);
             }
+            else
+            {
+                throw new Exception("Method not supported!");
+            }
            
         }
 
